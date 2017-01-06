@@ -1,1 +1,1 @@
-This is Online Resume Nanodegree Project.
+# This project is the part of Front End Web Development Nanodegree Course.
