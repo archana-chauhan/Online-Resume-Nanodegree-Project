@@ -3,7 +3,7 @@ var bio={
     "role" : "Web Developer",
     "welcomeMessage":"I'm pursuing B.Tech in Final year from University of Delhi. I'm self-motivated and observer too.I'm doing the Front End Web development Nanodegree Course from Udacity. I'm familliar with responsive websites. Currently I'm working on my own project Which is fully responsive website.",
     "bioPic" : "images/pic1.jpg",
-    "contacts" : [{
+    "contacts" : {
         "mobile" : "8826565292",
         "email" : "archana.chauhan1626@gmail.com",
         "location" : "Delhi-NCR",
@@ -11,7 +11,7 @@ var bio={
         "github" : "archana-chauhan@github.com",
         "linkedin" : "archana-chauhan",
         "skype" : "archana-chauhan123"
-    }],
+    },
     "skills" : ["Artist","Teaching","Designer","Motivator"]
 
 }
@@ -92,7 +92,7 @@ var education={
             "majors" : "Computer Science"
 
         }],
-    "onlineCourses": [{
+    "onlineClasses": [{
             "title": "Front-End Web Development Nanodegree Course",
             "school":"Udacity",
             "dates": "2016 - present",
@@ -166,9 +166,6 @@ projects.display = function(){
             var formattedImage = HTMLprojectImage.replace("%data%",projects.project[item].bioPic[image]);
             $(".project-entry:last").append(formattedImage);
         };
-
-
-
     }
 };
 
