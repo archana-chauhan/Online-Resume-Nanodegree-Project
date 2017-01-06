@@ -1,1 +1,1 @@
-# This project is the part of Front End Web Development Nanodegree Course.
+# This project is a part of Front End Web Development Nanodegree Course.
