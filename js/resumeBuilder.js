@@ -110,23 +110,16 @@ bio.display = function() {
     $("#skills").append(HTMLskills.replace("%data%",skill));
     });
 
-    // for(var contact in bio.contacts) {
-    //     if(bio.contacts.hasOwnProperty(contact)){
-    //         $("#footerContacts").append(HTMLmobile.replace("%data%",bio.contacts.mobile));
-    //         $("#footerContacts").append(HTMLemail.replace("%data%",bio.contacts.email));
-    //         $("#footerContacts").append(HTMLcontactGeneric.replace("%contact%","skype").replace("%data%",bio.contacts.skype));
-    //     }
-    // }
-
     $("#footerContacts").append(HTMLmobile.replace("%data%",bio.contacts.mobile));
     $("#footerContacts").append(HTMLemail.replace("%data%",bio.contacts.email));
     $("#footerContacts").append(HTMLcontactGeneric.replace("%contact%","skype").replace("%data%",bio.contacts.skype));
-}
+};
 
 bio.display();
 
 education.display = function() {
     $("#education").append(HTMLschoolStart);
+
 
     education.schools.forEach(function(school){
             var formattedName = HTMLschoolName.replace("%data%",school.name);
@@ -136,7 +129,19 @@ education.display = function() {
             var formattedMajor = HTMLschoolMajor.replace("%data%",school.majors);
             $(".education-entry:last").append(formattedName + formattedDegree,formattedDates,formattedLocation,formattedMajor);
         });
-}
+
+    $("#education").append(HTMLonlineClasses);
+
+    education.onlineClasses.forEach(function(item){
+        var formattedOnlineTitle = HTMLonlineTitle.replace("%data%",item.title);
+        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%",item.school);
+        var formattedOnlineDates = HTMLonlineDates.replace("%data%",item.dates);
+        var formattedOnlineURL = HTMLonlineURL.replace("%data%",item.url);
+        $(".education-entry:last").append(formattedOnlineTitle,formattedOnlineSchool,formattedOnlineDates,formattedOnlineURL);
+        });
+
+
+};
 
 education.display();
 
@@ -151,7 +156,7 @@ work.display = function() {
         var formattedDescription = HTMLworkDescription.replace("%data%",job.description);
         $(".work-entry:last").append(formattedEmployer + formattedTitle,formattedLoc,formattedDates,formattedDescription);
     });
-}
+};
 
 work.display();
 
@@ -170,7 +175,7 @@ projects.display = function() {
 
             });
     });
-}
+};
 
 projects.display();
 
