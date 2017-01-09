@@ -44,7 +44,7 @@ var projects = {
         "dates" : "5th December,2016",
         "description" : "This is a static webpage which is responsive by using Bootstrap framework",
         "url" : "https://github.com/archana-chauhan/Portfolio-Website",
-        "images" : ["images/1.png","images/2.png","images/3.png","images/4.png"]
+        "images" : ["images/1.jpg","images/2.jpg","images/3.jpeg","images/4.jpg"]
     },
     {
         "title" : "Online Resume Webpage",
@@ -118,9 +118,8 @@ bio.display = function() {
 bio.display();
 
 education.display = function() {
-
     education.schools.forEach(function(school){
-        $("#education").append(HTMLschoolStart);
+            $("#education").append(HTMLschoolStart);
             var formattedName = HTMLschoolName.replace("%data%",school.name);
             var formattedDegree = HTMLschoolDegree.replace("%data%",school.degree);
             var formattedDates = HTMLschoolDates.replace("%data%",school.dates);
@@ -129,15 +128,15 @@ education.display = function() {
             $(".education-entry:last").append(formattedName + formattedDegree,formattedDates,formattedLocation,formattedMajor);
         });
 
-    // $("#education").append(HTMLonlineClasses);
+    $("#education").append(HTMLonlineClasses);
 
     education.onlineClasses.forEach(function(item){
-        $("#education").append(HTMLonlineClasses);
+        $("#education").append(HTMLschoolStart);
         var formattedOnlineTitle = HTMLonlineTitle.replace("%data%",item.title);
         var formattedOnlineSchool = HTMLonlineSchool.replace("%data%",item.school);
         var formattedOnlineDates = HTMLonlineDates.replace("%data%",item.dates);
         var formattedOnlineURL = HTMLonlineURL.replace("%data%",item.url);
-        $(".education-entry:last").append(formattedOnlineTitle,formattedOnlineSchool,formattedOnlineDates,formattedOnlineURL);
+        $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool,formattedOnlineDates,formattedOnlineURL);
         });
 };
 
